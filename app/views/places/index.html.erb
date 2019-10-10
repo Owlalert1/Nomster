@@ -6,4 +6,4 @@
   </div>
 <% end %>
 
-<%= will_paginate @places %>
+<%= will_paginate @places, previous_label: "Older", next_label: "Newer", inner_window: 1, outer_window: 0 %>
