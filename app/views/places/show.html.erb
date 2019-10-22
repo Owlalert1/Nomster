@@ -3,6 +3,8 @@
   <i><%= @place.address %></i>
   <br/><br/>
   <p><%= @place.description %></p>
+  
+
 
   <% if @place.latitude.present? && @place.longitude.present? %>
    
@@ -32,19 +34,18 @@
 <% end %>
 
 <br />
-
-  <div class="float-right">
+<div class="float-right">
     <% if current_user && current_user == @place.user %>
       <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
       <%= link_to 'Destroy', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn-danger' %>
     <% end %>
-      
-
 </div>
+
+  
 
 <div class="clear"></div>
 
-<!-- Modal -->
+    <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -98,7 +99,9 @@
   <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
 <% end %>
 
+
 <h1>Photos</h1>
+
 
 <% @place.photos.each do |photo| %>
   <div>
@@ -107,3 +110,5 @@
   </blockquote>
   </div>
 <% end %>
+</div>
+
