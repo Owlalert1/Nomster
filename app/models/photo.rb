@@ -4,5 +4,5 @@ class Photo < ApplicationRecord
 end
 
 class Photo < ActiveRecord::Base
-  mount_uploader :picture, PictureUploader
+  mount_uploadewr :picture, PictureUploader
 end
