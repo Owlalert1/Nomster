@@ -20,6 +20,19 @@
     </div>
   <% end %>
   </div>
+
+  <% if place.photos.present? %>
+    <div class="col-12">
+      <blockquote>
+        <% if place.photos.last.present? %>
+        <%= place.photos.last.caption %>
+        <% end %>
+      </blockquote>
+        <%= image_tag place.photos.last.picture.to_s %>
+    </div>
+  <% end %>
 <% end %>
+
+
 
 <%= will_paginate @places, previous_label: "Older", next_label: "Newer", inner_window: 1, outer_window: 0 %>
